@@ -6,11 +6,11 @@ Set 1:
 - system programming
 - bits
 
-Set 2 - Available Thursday September 1st:
+Set 2 - Available Friday January 27th:
 
 - allocation
 - debug
 - error_handling
 - structures
 
-Due Friday, September 9th, 11:59 AM
+Due Friday, February 3rd
