@@ -2,6 +2,7 @@
 #include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 
 #include "../include/sstring.h"
 
@@ -138,8 +139,22 @@ int string_tokenize(const char *str, const char *delims, const size_t str_length
 
 bool string_to_int(const char *str, int *converted_value) {
 
-    if(str == NULL) {
+    if(str == NULL || converted_value == NULL) {
         return false;
     }
-    return true;
+
+    char* letter = NULL;
+    *converted_value = (int) strtol(str, &letter, 10);
+
+    if(errno == 34) {
+        *converted_value = 0;
+        errno = 0; //clearing the out-of-bounds error message
+        return false;
+    }
+    else if((strcmp(letter, "") == 0) || (strcmp(letter, " ") == 0)) {
+        return true;
+    }
+    else {
+        return true;
+    }
 }
