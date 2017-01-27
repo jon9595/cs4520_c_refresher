@@ -151,7 +151,7 @@ bool string_to_int(const char *str, int *converted_value) {
         errno = 0; //clearing the out-of-bounds error message
         return false;
     }
-    else if((strcmp(letter, "") == 0) || (strcmp(letter, " ") == 0)) {
+    else if((strcmp(letter, "") == 0) || (strcmp(letter, " ") == 0)) { //comparing string to acceptable chars
         return true;
     }
     else {
