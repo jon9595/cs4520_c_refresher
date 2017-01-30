@@ -23,6 +23,9 @@ build
 *.out
 *.app
 
+###Binary Files###
+*.bin
+
 
 ###CMake###
 
